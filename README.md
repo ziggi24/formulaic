@@ -2,7 +2,7 @@
 
 A daily emoji code-breaking puzzle game inspired by Wordle and Mastermind. Guess the secret sequence of five emojis in nine tries using visual clues!
 
-🎮 **Play now:** [https://ziggi24.github.io/formulaic/](https://ziggi24.github.io/formulaic/)
+🎮 **Play now:** [https://formulaic.dev/](https://formulaic.dev/)
 
 ## 🎯 Overview
 
@@ -151,7 +151,7 @@ Guess 2: ⚫⚪
 Guess 3: ⚫⚫⚪
 Guess 4: ⚫⚫⚫⚫⚫
 
-https://ziggi24.github.io/formulaic/
+https://formulaic.dev/
 ```
 
 ## 🛠️ Development
@@ -215,4 +215,4 @@ This project is open source and available under the MIT License.
 
 **Made with ❤️ for puzzle lovers everywhere**
 
-Play daily at [https://ziggi24.github.io/formulaic/](https://ziggi24.github.io/formulaic/)
+Play daily at [https://formulaic.dev/](https://formulaic.dev/)

@@ -501,7 +501,7 @@
             lines.push(`Guess ${state.feedbacks.length + 1}: ${feedbackToString(fb)}`);
         }
         lines.push("");
-        const fullUrl = (location && location.href && location.href !== "null") ? location.href : "https://ziggi24.github.io/formulaic/";
+        const fullUrl = (location && location.href && location.href !== "null") ? location.href : "https://formulaic.dev/";
         lines.push(fullUrl);
         return lines.join("\n");
     }
