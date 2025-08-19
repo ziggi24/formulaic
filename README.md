@@ -30,7 +30,7 @@ Guess the secret emoji pattern in **nine tries or less**. After each guess, use 
 4. **Learn** from the feedback and make a better guess on the next line
 
 ### Emoji Palette
-The game uses 8 distinct emojis chosen for their visual accessibility:
+The game uses 8 distinct emojis chosen for their visual uniqueness and accessibility:
 🍓 🚚 🌼 🌲 🧵 ☂️ 💕 💍
 
 ## 🔍 Understanding Clues
