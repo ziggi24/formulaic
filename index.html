@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaic — Emoji Codebreaker</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/app.js" defer></script>
+    <meta name="description" content="Formulaic is a daily emoji code-breaking puzzle. Guess the 5-emoji sequence in 6 tries.">
+</head>
+<body>
+    <header class="header" role="banner">
+        <h1 class="title">Formulaic</h1>
+        <div class="puzzle-meta" aria-live="polite">
+            <span id="puzzleNumber">#0</span>
+            <button id="infoBtn" class="info-btn" aria-label="How to play" title="How to play">ⓘ</button>
+        </div>
+    </header>
+
+    <main class="game" role="main">
+        <div class="game-container">
+            <section id="board" class="board" aria-label="Game grid">
+                <!-- Rows are rendered by JavaScript -->
+            </section>
+
+            <section id="palette" class="palette" aria-label="Emoji palette">
+                <!-- Emoji buttons rendered by JavaScript -->
+            </section>
+
+            <section class="controls">
+                <button id="deleteBtn" aria-label="Delete last emoji" class="secondary">Delete</button>
+                <button id="enterBtn" aria-label="Submit guess" class="primary">Submit</button>
+            </section>
+        </div>
+    </main>
+
+    <dialog id="howToModal" class="modal detailed-modal" aria-labelledby="howToTitle">
+        <h2 id="howToTitle">How to Play</h2>
+        
+        <div class="how-to-content">
+            <p class="intro">Guess the secret emoji pattern in nine tries or less. After each guess, use the clues on the side to figure out the right pattern and win!</p>
+            
+            <div class="instructions">
+                <ol>
+                    <li>Select five emoji from the palette to fill a row.</li>
+                    <li>Press the "Submit" button to submit your guess.</li>
+                    <li>Check the clues that appear to see how close you were.</li>
+                    <li>Use what you learned to make a better guess on the next line!</li>
+                </ol>
+            </div>
+
+            <div class="clues-section">
+                <h3>Examples & Clues</h3>
+                
+                <div class="clue-item">
+                    <div class="clue-symbol">⚫</div>
+                    <div class="clue-description">
+                        <strong>Correct Emoji, Correct Spot</strong>
+                        <p>This means you have the correct emoji in the correct spot.</p>
+                    </div>
+                </div>
+
+                <div class="clue-item">
+                    <div class="clue-symbol">⚪</div>
+                    <div class="clue-description">
+                        <strong>Correct Emoji, Wrong Spot</strong>
+                        <p>This means you have a correct emoji, but it's in the wrong place.</p>
+                    </div>
+                </div>
+
+                <div class="example-section">
+                    <h4>Example Guess:</h4>
+                    <p>Let's say after your guess, you see the clues <strong>⚫ ⚪</strong>. This tells you that for the guess you just made:</p>
+                    <ul>
+                        <li>One emoji is correct, and in the correct position.</li>
+                        <li>One emoji is correct, but is in the wrong position.</li>
+                        <li>The other three emoji are not in the secret pattern at all.</li>
+                    </ul>
+                </div>
+
+                <div class="important-notes">
+                    <h4>Important:</h4>
+                    <ul>
+                        <li>The clues don't line up with your guess. They just tell you a total count of how many you got right.</li>
+                        <li>The secret pattern can have duplicates, like 🍓 🌲 🌲 💍 🚚.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <button id="howToCloseBtn" class="primary">Got it</button>
+    </dialog>
+
+    <dialog id="resultModal" class="modal" aria-labelledby="resultTitle">
+        <h2 id="resultTitle">You Win!</h2>
+        <p id="solutionReveal" class="solution"></p>
+        <div class="stats">
+            <div class="stat"><span id="gamesPlayed">0</span><label>Played</label></div>
+            <div class="stat"><span id="winRate">0%</span><label>Win %</label></div>
+            <div class="stat"><span id="currentStreak">0</span><label>Streak</label></div>
+            <div class="stat"><span id="maxStreak">0</span><label>Max</label></div>
+        </div>
+        <div class="distribution" id="guessDistribution" aria-label="Guess distribution"></div>
+        <div class="countdown">
+            <span>Next puzzle in </span><span id="countdownTimer">23:59:59</span>
+        </div>
+        <div class="result-actions">
+            <button id="shareBtn" class="primary">Share</button>
+            <button id="resultCloseBtn" class="secondary">Close</button>
+        </div>
+    </dialog>
+
+    <div id="winCelebration" class="win-celebration" hidden>
+        <div class="win-content">
+            <div class="win-title">🎉 You Win! 🎉</div>
+            <div class="win-emojis" id="winEmojis">🌟✨🎊</div>
+            <div id="winShareText" class="share-text"></div>
+            <button id="winCloseBtn" class="primary">Continue</button>
+        </div>
+    </div>
+
+    <div id="toast" role="status" aria-live="polite" class="toast" hidden>Copied to clipboard</div>
+    
+    <noscript>
+        JavaScript is required to play Formulaic.
+    </noscript>
+</body>
+</html>
