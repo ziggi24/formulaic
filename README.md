@@ -1,4 +1,4 @@
-# Formulaic 🎯
+# Formulaic 🔍
 
 A daily emoji code-breaking puzzle game inspired by Wordle and Mastermind. Guess the secret sequence of five emojis in nine tries using visual clues!
 
